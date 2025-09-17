@@ -1,0 +1,80 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2em; /* 75% larger than dummy text */
+      margin-bottom: 30px;
+    }
+
+    /* -------------------- Row Setup -------------------- */
+    .row {
+      width: 100%;
+      overflow: hidden; /* clears floats */
+    }
+
+    /* -------------------- Section Styling -------------------- */
+    .section {
+      background-color: #d3d3d3; /* light grey by default */
+      border: 1px solid black;
+      margin: 10px;
+      padding: 40px 15px 15px 15px; /* push text down so title doesn't overlap */
+      position: relative;           /* for absolute-positioned title */
+      text-align: left;
+    }
+
+    /* -------------------- Section Titles -------------------- */
+    .section .title {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: 1px solid black;
+      padding: 5px 15px;
+      font-weight: bold;
+      font-size: 1.25em; /* 25% larger than dummy text */
+    }
+
+    /* Individual title colors */
+    .chicken .title { background-color: #f4a7a7; } /* soft pink */
+    .beef .title { background-color: #d9534f; color: white; } /* red */
+    .sushi .title { background-color: #f9e79f; } /* light yellow */
+
+    /* -------------------- Desktop View (≥992px) -------------------- */
+    @media (min-width: 992px) {
+      .section {
+        float: left;
+        width: 31.33%; /* three per row, leaving space for margins */
+      }
+    }
+
+    /* -------------------- Tablet View (768px–991px) -------------------- */
+    @media (min-width: 768px) and (max-width: 991px) {
+      .section {
+        float: left;
+        width: 48%;  /* first 2 sections side by side */
+        margin: 1%;
+      }
+
+      /* third section full width */
+      .sushi {
+        width: 98%;
+        margin-left: 1%;
+        margin-right: 1%;
+      }
+    }
+
+    /* -------------------- Mobile View (≤767px) -------------------- */
+    @media (max-width: 767px) {
+      .section {
+        width: 100%; /* stacked vertically */
+        float: none;
+      }
+    }
